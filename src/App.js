@@ -1,25 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { Carrinho } from './Components/Carrinhos';
+import { Filtros } from './Components/Filtros';
+import { ListaDeProdutos } from './Components/ListaDeProdutos';
+import { DivApp } from './Styled.js';
+import { Produtos } from './mockDeDados'
 
 function App() {
+  const [carrinho, setCarrinho]=useState([])
+  const [produtoAtual, setProdutoAtual]=useState(Produtos)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DivApp>
+      <Filtros/>
+      <ListaDeProdutos meusProdutos={produtoAtual} adicionarAoCarrinho={setCarrinho} carrinho={carrinho}/>
+      <Carrinho carrinho={carrinho}/>
+    </DivApp>
   );
 }
 
