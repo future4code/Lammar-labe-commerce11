@@ -17,11 +17,14 @@ export function Carrinho(props){
             </>
         )
     })
+    let valorItens = props.carrinho.reduce((total, item)=> Number(total) + Number(item.valor), 0)
 
     return(
         <DivCarrinho>
             <TituloCarrinho>Carrinho</TituloCarrinho>
             {componentsCarrinho}
+            {valorItens.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}
+            
         </DivCarrinho>
     )
 

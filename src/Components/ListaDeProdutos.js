@@ -15,7 +15,7 @@ export const ListaDeProdutos=(props)=>{
             <DivListaDeProdutos key={index}>
                 {<Imagem src={item.imagem} alt="" />}
                 <ProdutosExibidos>{item.nomeDoProduto}</ProdutosExibidos>
-                <ProdutosExibidos>{item.valor}</ProdutosExibidos>
+                <ProdutosExibidos>{Number(item.valor).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</ProdutosExibidos>
                 <button onClick={()=>adicionatItensNoCarrinho(item)}>Adicionar ao carrinho</button>
             </DivListaDeProdutos>
         )
