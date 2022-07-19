@@ -4,7 +4,7 @@ import { LabelFiltro } from "../Styled.js";
 import { TituloFiltro } from "../Styled.js";
 import { DivFilto } from "../Styled.js";
 
-export function Filtros(){
+export function Filtros(props){
     return(
         <DivFilto>
             <TituloFiltro>Filtros</TituloFiltro>
@@ -16,7 +16,10 @@ export function Filtros(){
             <InputFiltro placeholder="Digite um valor"></InputFiltro>
 
             <LabelFiltro>Busca por nome</LabelFiltro>
-            <InputFiltro placeholder="Digite o nome"></InputFiltro>
+            <InputFiltro placeholder="Digite o nome"
+            value={props.consulta}
+            onChange={(ev)=>{props.setConsulta(ev.target.value) }}>
+            </InputFiltro>
         
         </DivFilto>
     )
