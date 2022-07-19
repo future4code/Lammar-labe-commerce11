@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import { DivCarrinho } from "../Styled.js";
 import { TituloCarrinho } from "../Styled.js";
 import { TituloProdutos } from "../Styled.js";
