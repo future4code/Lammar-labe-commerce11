@@ -37,8 +37,8 @@ function App() {
         {
           produtoAtual
             .filter(prod => prod.nomeDoProduto.includes(consulta))
-            .filter(prod => prod.valor >= minPreco || minPreco === "")
-            .filter(prod => prod.valor <= maxPreco || maxPreco === "")
+            .filter(prod => Number(prod.valor) >= Number(minPreco) || minPreco === "")
+            .filter(prod => Number(prod.valor) <= Number(maxPreco) || maxPreco === "")
             .sort((atualProduto, proximoProduto) => {
               switch (ordernarSortido) {
                 case "valor":

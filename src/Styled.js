@@ -4,9 +4,54 @@ import styled from "styled-components";
 
 export const DivHeader=styled.div`
     background-color: blueviolet;
-    height: 4.5vh;
+    height: 9vh;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+`
+
+export const ImagemLogo=styled.img`
+    width: auto;
+    height: 8vh;
+    margin: 0 10px;
+`
+
+export const TituloLogo=styled.h3`
+    font-family: 'Oswald', sans-serif;
+    color: pink;
+    font-size: 20px;
+
+`
+
+export const DivLogo=styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+`
+export const DivLogin=styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ `
+
+export const ImagemLogin =styled.img`
+    height: 30px;
+    width: 30px;
+    margin: 0;
+`
+
+export const ButtonLogin=styled.button`
+    font-family: 'Oswald', sans-serif;
+    width: 5vw;
+    height: 3vh;
+    margin: 0 10px;
+    border: none;
+    background-color:blueviolet;
+    font-size: 18px;
+    color: pink;
+    cursor: pointer;
+
 `
 
 // APP:
@@ -14,7 +59,7 @@ export const DivHeader=styled.div`
 export const DivApp=styled.div`
     display: flex;
     justify-content: space-between;
-    height: 95vh;
+    height: 91vh;
     background-color: #ece4f5;
 `
 
@@ -25,7 +70,7 @@ export const DivFilto=styled.div`
     flex-direction: column;
     margin: 10px 0 0 10px;
     width: 15vw;
-    height: 94vh;
+    height: 88vh;
 `
 
 export const TituloFiltro=styled.h1`
@@ -109,6 +154,7 @@ export const DivProdutosExibidos=styled.div`
     justify-content: center;
     flex-wrap: wrap; 
     width: 70vw;
+    
 `
 
 export const Button=styled.button`
@@ -121,6 +167,7 @@ export const Button=styled.button`
     cursor: pointer;
 
 `
+
 
 // CARRINHO:
 

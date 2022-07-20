@@ -1,11 +1,20 @@
 import React from "react";
-import { DivHeader } from "../Styled";
+import { ButtonLogin, DivHeader, DivLogin, DivLogo, ImagemLogin, ImagemLogo, TituloLogo } from "../Styled";
+import LoginIcone from '../img/IconePink.png'
+import Logo from '../img/logo.png'
 
 export function Header(){
     return(
         <DivHeader>
-            <h3>Nome da loja</h3>
-            <button>Login</button>
+            <DivLogo>
+                <ImagemLogo src={Logo}/>
+                <TituloLogo>Universo das camisetas</TituloLogo>
+            </DivLogo>
+
+            <DivLogin>
+                <ImagemLogin src={LoginIcone} alt="icone-login"/>
+                <ButtonLogin>Minha conta</ButtonLogin>
+            </DivLogin>
         
         </DivHeader>
     )

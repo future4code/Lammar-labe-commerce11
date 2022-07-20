@@ -14,6 +14,7 @@ export function Carrinho(props){
             })
             novoCarrinho.splice(deletar,1)
             props.setCarrinho(novoCarrinho)
+            localStorage.setItem("carrinho", novoCarrinho)
         }
         return(
             <>
