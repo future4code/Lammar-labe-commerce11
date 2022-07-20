@@ -5,6 +5,7 @@ import { Filtros } from './Components/Filtros';
 import { ListaDeProdutos } from './Components/ListaDeProdutos';
 import { DivApp, DivProdutosExibidos } from './Styled.js';
 import { Produtos } from './mockDeDados'
+import { Header } from './Components/Header';
 
 function App() {
   const [carrinho, setCarrinho] = useState([])
@@ -15,6 +16,8 @@ function App() {
   const [ordenar, setOrdenar] = useState("cresc")
   const [ordernarSortido, setOrdenarSortido] = useState("nomeDoProduto")
   return (
+    <>
+    <Header/>
     <DivApp>
 
       <Filtros
@@ -55,10 +58,11 @@ function App() {
             .map(prod => <ListaDeProdutos key={prod.id} prod={prod} setCarrinho={setCarrinho} carrinho={carrinho}></ListaDeProdutos>)
         }
       </DivProdutosExibidos>
-      <Carrinho carrinho={carrinho} />
+      <Carrinho carrinho={carrinho} setCarrinho={setCarrinho} />
 
   
     </DivApp>
+    </>
   );
 }
 

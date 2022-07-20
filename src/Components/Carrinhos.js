@@ -1,5 +1,5 @@
 import React from "react";
-import { DivCarrinho, ValorFinalCarrinho } from "../Styled.js";
+import { ButtonDeletar, DivCarrinho, DivPrecoRemover, ValorFinalCarrinho } from "../Styled.js";
 import { TituloCarrinho } from "../Styled.js";
 import { TituloProdutos } from "../Styled.js";
 import { DivItensAdicionados, ButtonCheckout } from "../Styled.js";
@@ -7,12 +7,22 @@ import { DivItensAdicionados, ButtonCheckout } from "../Styled.js";
 export function Carrinho(props){
 
     const componentsCarrinho=props.carrinho.map((item, index)=>{
-        
+        const deletarProdutos = () =>{
+            const novoCarrinho = [...props.carrinho]
+            const deletar = novoCarrinho.findIndex((produto)=>{
+                return produto === item
+            })
+            novoCarrinho.splice(deletar,1)
+            props.setCarrinho(novoCarrinho)
+        }
         return(
             <>
                 <DivItensAdicionados key={index}>
                     <TituloProdutos>{item.nomeDoProduto}</TituloProdutos>
-                    <TituloProdutos>{Number(item.valor).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</TituloProdutos>
+                    <DivPrecoRemover>
+                        <TituloProdutos>{Number(item.valor).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</TituloProdutos>
+                        <ButtonDeletar onClick={deletarProdutos}>x</ButtonDeletar>
+                    </DivPrecoRemover>
                 </DivItensAdicionados>
             </>
         )
