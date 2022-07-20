@@ -1,11 +1,20 @@
 import styled from "styled-components";
 
+// HEADER:
+
+export const DivHeader=styled.div`
+    background-color: blueviolet;
+    height: 4.5vh;
+    display: flex;
+    flex-direction: row;
+`
+
 // APP:
 
 export const DivApp=styled.div`
     display: flex;
     justify-content: space-between;
-    height: 100vh;
+    height: 95vh;
     background-color: #ece4f5;
 `
 
@@ -16,18 +25,32 @@ export const DivFilto=styled.div`
     flex-direction: column;
     margin: 10px 0 0 10px;
     width: 15vw;
-    height: 99vh;
+    height: 94vh;
 `
 
 export const TituloFiltro=styled.h1`
     color: blueviolet;
     text-align: center;
     margin-bottom: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-size:25px;
+
 `
 
 export const InputFiltro=styled.input`
     margin: 5px 0 10px 5px;
     font-family: 'Oswald', sans-serif;
+    background-color: #ece4f5;
+    border: 2px solid blueviolet;
+    :hover{
+        border: 2px solid purple;
+        
+    }
+    ::placeholder{
+        color: purple;
+        padding-left: 5px;
+    }
+
 
 `
 
@@ -113,6 +136,8 @@ export const TituloCarrinho=styled.h1`
     color: blueviolet;
     height: 10vh;
     text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size:25px;
 `
 
 export const DivItensAdicionados=styled.div`
@@ -165,7 +190,6 @@ export const ButtonDeletar=styled.button`
         color: red;
 
     }
-
 
 `
 
