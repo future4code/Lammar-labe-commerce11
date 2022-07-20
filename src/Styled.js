@@ -118,10 +118,10 @@ export const TituloCarrinho=styled.h1`
 export const DivItensAdicionados=styled.div`
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-weight: bold;
     font-family: 'Oswald', sans-serif;
     color: #404040;
-
 `
 
 export const TituloProdutos=styled.p`
@@ -149,9 +149,29 @@ export const ButtonCheckout=styled.button`
     :hover{
         background-color: #6e06cf;
         color: white;
-    }
-;
+    }`
 
+export const ButtonDeletar=styled.button`
+    width: 1vw;
+    height: 2vh;
+    background-color: #ece4f5;
+    border: none;
+    font-family: sans-serif;
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+    margin-bottom: 5px;
+    :hover{
+        color: red;
+
+    }
+
+
+`
+
+export const DivPrecoRemover=styled.div`
+    display: flex;
+    align-items: center;
 `
 
 // MOCK:

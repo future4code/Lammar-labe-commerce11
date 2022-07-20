@@ -55,7 +55,7 @@ function App() {
             .map(prod => <ListaDeProdutos key={prod.id} prod={prod} setCarrinho={setCarrinho} carrinho={carrinho}></ListaDeProdutos>)
         }
       </DivProdutosExibidos>
-      <Carrinho carrinho={carrinho} />
+      <Carrinho carrinho={carrinho} setCarrinho={setCarrinho} />
 
   
     </DivApp>
