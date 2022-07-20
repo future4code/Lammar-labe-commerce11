@@ -1,8 +1,8 @@
 import React from "react";
-import { DivCarrinho } from "../Styled.js";
+import { DivCarrinho, ValorFinalCarrinho } from "../Styled.js";
 import { TituloCarrinho } from "../Styled.js";
 import { TituloProdutos } from "../Styled.js";
-import { DivItensAdicionados } from "../Styled.js";
+import { DivItensAdicionados, ButtonCheckout } from "../Styled.js";
 
 export function Carrinho(props){
 
@@ -12,7 +12,7 @@ export function Carrinho(props){
             <>
                 <DivItensAdicionados key={index}>
                     <TituloProdutos>{item.nomeDoProduto}</TituloProdutos>
-                    <TituloProdutos>{item.valor}</TituloProdutos>
+                    <TituloProdutos>{Number(item.valor).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</TituloProdutos>
                 </DivItensAdicionados>
             </>
         )
@@ -23,8 +23,8 @@ export function Carrinho(props){
         <DivCarrinho>
             <TituloCarrinho>Carrinho</TituloCarrinho>
             {componentsCarrinho}
-            {valorItens.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}
-            
+            <ValorFinalCarrinho>TOTAL: {valorItens.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</ValorFinalCarrinho>
+            <ButtonCheckout>FINALIZAR COMPRA</ButtonCheckout> 
         </DivCarrinho>
     )
 

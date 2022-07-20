@@ -1,5 +1,5 @@
 import React from "react";
-import { InputFiltro } from "../Styled.js";
+import { InputFiltro, Option, Ordenacao, OrdenacaoSortido } from "../Styled.js";
 import { LabelFiltro } from "../Styled.js";
 import { TituloFiltro } from "../Styled.js";
 import { DivFilto } from "../Styled.js";
@@ -8,6 +8,12 @@ export function Filtros(props) {
     return (
         <DivFilto>
             <TituloFiltro>Filtros</TituloFiltro>
+
+            <LabelFiltro>Busca por nome</LabelFiltro>
+            <InputFiltro placeholder="Digite o nome"
+                value={props.consulta}
+                onChange={(ev) => { props.setConsulta(ev.target.value) }}>
+            </InputFiltro>
 
             <LabelFiltro>Valor mínimo</LabelFiltro>
             <InputFiltro placeholder="Digite um valor"
@@ -23,29 +29,25 @@ export function Filtros(props) {
                 onChange={(ev) => { props.setMaxPreco(ev.target.value) }}
             ></InputFiltro>
 
-            <LabelFiltro>Busca por nome</LabelFiltro>
-            <InputFiltro placeholder="Digite o nome"
-                value={props.consulta}
-                onChange={(ev) => { props.setConsulta(ev.target.value) }}>
-            </InputFiltro>
 
-            <select
-                value={props.ordernarSortido}
-                onChange={(ev) => { props.setOrdenarSortido(ev.target.value) }}
-            >
-                <option value={"nomeDoProduto"}>Nome</option>
-                <option value={"valor"}>Preço</option>
-            </select>
 
             <LabelFiltro>
-                Ordenar Por:
-                <select
+                <p>Ordenar por:</p>
+                <Ordenacao
                     value={props.ordenar}
                     onChange={(ev) => { props.setOrdenar(ev.target.value) }}
                 >
-                    <option value={"cresc"}>Crescente</option>
-                    <option value={"desc"}>Decrescente</option>
-                </select>
+                    <Option value={"cresc"}>Crescente</Option>
+                    <Option value={"desc"}>Decrescente</Option>
+                </Ordenacao>
+
+                <OrdenacaoSortido
+                value={props.ordernarSortido}
+                onChange={(ev) => { props.setOrdenarSortido(ev.target.value) }}
+            >
+                <Option value={"nomeDoProduto"}>Nome</Option>
+                <Option value={"valor"}>Preço</Option>
+            </OrdenacaoSortido>
             </LabelFiltro>
 
         </DivFilto>

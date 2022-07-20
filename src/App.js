@@ -56,6 +56,8 @@ function App() {
         }
       </DivProdutosExibidos>
       <Carrinho carrinho={carrinho} />
+
+  
     </DivApp>
   );
 }

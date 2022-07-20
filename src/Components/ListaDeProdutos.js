@@ -1,5 +1,5 @@
 import React from "react"
-import { Imagem, ProdutosExibidos } from "../Styled.js"
+import { Button, Imagem, ProdutosExibidos, TituloProdutosExibidos, ValorProdutosExibidos } from "../Styled.js"
 // import { ImagemExibida } from "../Styled.js"
 import { DivListaDeProdutos } from "../Styled.js"
 
@@ -11,9 +11,9 @@ export const ListaDeProdutos = (props) => {
     return (
         <DivListaDeProdutos>
             <Imagem src={props.prod.imagem} alt="" />
-            <ProdutosExibidos>{props.prod.nomeDoProduto}</ProdutosExibidos>
-            <ProdutosExibidos>{Number(props.prod.valor).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</ProdutosExibidos>
-            <button onClick={() => adicionatItensNoCarrinho(props.prod)}>Adicionar ao carrinho</button>
+            <Button onClick={() => adicionatItensNoCarrinho(props.prod)}>ADICIONE AO CARRINHO</Button>
+            <TituloProdutosExibidos>{props.prod.nomeDoProduto}</TituloProdutosExibidos>
+            <ValorProdutosExibidos>{Number(props.prod.valor).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</ValorProdutosExibidos>
         </DivListaDeProdutos>
     )
 }
