@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ButtonDeletar, DivCarrinho, DivPrecoRemover, ValorFinalCarrinho } from "../Styled.js";
 import { TituloCarrinho } from "../Styled.js";
 import { TituloProdutos } from "../Styled.js";
@@ -22,7 +22,7 @@ export function Carrinho(props){
                     <p>{item.Quantidade}</p>
                     <TituloProdutos>{item.nomeDoProduto}</TituloProdutos>
                     <DivPrecoRemover>
-                        <TituloProdutos>{Number(item.valor).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</TituloProdutos>
+                        <TituloProdutos>{Number((item.valor) * (item.Quantidade)).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</TituloProdutos>
                         <ButtonDeletar onClick={deletarProdutos}>x</ButtonDeletar>
                     </DivPrecoRemover>
                 </DivItensAdicionados>
