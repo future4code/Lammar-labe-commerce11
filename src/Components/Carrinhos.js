@@ -6,6 +6,7 @@ import { DivItensAdicionados, ButtonCheckout } from "../Styled.js";
 
 export function Carrinho(props){
 
+
     const componentsCarrinho=props.carrinho.map((item, index)=>{
         const deletarProdutos = () =>{
             const novoCarrinho = [...props.carrinho]
@@ -14,27 +15,30 @@ export function Carrinho(props){
             })
             novoCarrinho.splice(deletar,1)
             props.setCarrinho(novoCarrinho)
+            localStorage.setItem("carrinho", JSON.stringify(novoCarrinho))
         }
         return(
-            <>
                 <DivItensAdicionados key={index}>
+                    <p>{item.Quantidade}</p>
                     <TituloProdutos>{item.nomeDoProduto}</TituloProdutos>
                     <DivPrecoRemover>
-                        <TituloProdutos>{Number(item.valor).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</TituloProdutos>
+                        <TituloProdutos>{Number((item.valor) * (item.Quantidade)).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</TituloProdutos>
                         <ButtonDeletar onClick={deletarProdutos}>x</ButtonDeletar>
                     </DivPrecoRemover>
                 </DivItensAdicionados>
-            </>
         )
     })
-    let valorItens = props.carrinho.reduce((total, item)=> Number(total) + Number(item.valor), 0)
+    let valorItens = props.carrinho.reduce((total, item)=> Number(total) + (Number(item.valor)* (item.Quantidade)), 0)
 
     return(
         <DivCarrinho>
             <TituloCarrinho>Carrinho</TituloCarrinho>
             {componentsCarrinho}
             <ValorFinalCarrinho>TOTAL: {valorItens.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</ValorFinalCarrinho>
-            <ButtonCheckout>FINALIZAR COMPRA</ButtonCheckout> 
+            <ButtonCheckout onClick={()=>props.setCheckout(true)}>FINALIZAR PEDIDO</ButtonCheckout>
+
+
+
         </DivCarrinho>
     )
 
