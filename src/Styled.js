@@ -39,6 +39,10 @@ export const ImagemLogin =styled.img`
     height: 30px;
     width: 30px;
     margin: 0;
+    @media screen and (min-device-width: 330px) and (max-device-width: 480px){
+        width: 20px;
+        height: 20px;
+    }
 `
 
 export const ButtonLogin=styled.button`
@@ -51,6 +55,11 @@ export const ButtonLogin=styled.button`
     font-size: 18px;
     color: pink;
     cursor: pointer;
+    @media screen and (min-device-width: 330px) and (max-device-width: 480px){
+        font-size: 14px;
+        width: 20vw;
+        margin: 0;
+    }
 
 `
 
@@ -61,6 +70,11 @@ export const DivApp=styled.div`
     justify-content: space-between;
     height: 91vh;
     background-color: #ece4f5;
+    @media screen and (min-device-width: 330px) and (max-device-width: 480px){
+        flex-direction: column;
+        height: auto;
+        width: 100vw;
+    }
 `
 
 // FILTROS:
@@ -71,6 +85,12 @@ export const DivFilto=styled.div`
     margin: 10px 0 0 10px;
     width: 15vw;
     height: 88vh;
+    @media screen and (min-device-width: 330px) and (max-device-width: 480px){
+        flex-direction: row;
+        height: auto;
+        width: auto;
+    }
+
 `
 
 export const TituloFiltro=styled.h1`
@@ -79,7 +99,15 @@ export const TituloFiltro=styled.h1`
     margin-bottom: 10px;
     font-family: 'Oswald', sans-serif;
     font-size:25px;
+    @media screen and (min-device-width: 330px) and (max-device-width: 480px){
+        display: none;
+    }
 
+`
+
+export const DivFiltrosOrdenacao=styled.div`
+    display: flex;
+    flex-direction: column;
 `
 
 export const InputFiltro=styled.input`
@@ -95,31 +123,76 @@ export const InputFiltro=styled.input`
         color: purple;
         padding-left: 5px;
     }
-
-
+    @media screen and (min-device-width: 330px) and (max-device-width: 480px){
+        width: 22vw;
+    }
 `
 
 export const LabelFiltro=styled.label`
     margin: 0 0 0 5px;
     font-family: 'Oswald', sans-serif;
     font-size: 18px;
+
+    @media screen and (min-device-width: 330px) and (max-device-width: 480px){
+        font-size: 15px;
+    }
+`
+
+export const LabelFiltroOrdenacao=styled.label`
+    margin: 0 0 0 5px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+
+    @media screen and (min-device-width: 330px) and (max-device-width: 480px){
+        font-size: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+`
+
+export const P=styled.p`
+        font-family: 'Oswald', sans-serif;
+        @media screen and (min-device-width: 330px) and (max-device-width: 480px){
+            display: none;
+        }
 `
 
 export const Ordenacao=styled.select`
     background-color: #ece4f5;
     border: 2px solid #9a46f9;
     width: 5vw;
+    @media screen and (min-device-width: 330px) and (max-device-width: 480px){
+        width: 22vw;
+        margin-top: 8px;
+
+    }
 `
 export const OrdenacaoSortido=styled.select`
     background-color: #ece4f5;
     border: 2px solid #9a46f9;
-    margin-left: 5px;
     width: 5vw;
+    @media screen and (min-device-width: 330px) and (max-device-width: 480px){
+        width: 22vw;
+        margin-top: 2px;
+
+    }
 `
 
 export const Option=styled.option`
     border-radius: none;
     text-align: center;
+
+`
+
+// LISTA - CARRINHO (DIV)
+
+export const DivListaCarrinho=styled.div`
+    display: flex;
+    flex-direction: row;
+    width: 85vw;
+    @media screen and (min-device-width: 330px) and (max-device-width: 480px){
+        width: 100vw;
+    }
 `
 
 // LISTA DE PRODUTOS:
@@ -131,6 +204,10 @@ export const DivListaDeProdutos=styled.div`
     margin: 10px 20px 0 0;
     width: 15vw;
     height: 40vh;
+    @media screen and (min-device-width: 330px) and (max-device-width: 480px){
+        width: 28vw;
+
+    }
 `
 
 export const TituloProdutosExibidos=styled.p`
@@ -138,6 +215,7 @@ export const TituloProdutosExibidos=styled.p`
     color: #404040;
     font-family: 'Oswald', sans-serif;
     font-size: 15px;
+
 `
 
 export const ValorProdutosExibidos=styled.p`
@@ -154,7 +232,8 @@ export const DivProdutosExibidos=styled.div`
     justify-content: center;
     flex-wrap: wrap; 
     width: 70vw;
-    
+
+
 `
 
 export const Button=styled.button`
@@ -165,6 +244,11 @@ export const Button=styled.button`
     background-color: blueviolet;
     color: white;
     cursor: pointer;
+    @media screen and (min-device-width: 330px) and (max-device-width: 480px){
+        width: 40vw;
+        font-size: 10px;
+        border-radius: 2px;
+        }
 
 `
 
@@ -177,6 +261,10 @@ export const DivCarrinho=styled.div`
     justify-content: start;
     width: 20vw;
     margin: 10px 10px 0 0;
+    @media screen and (min-device-width: 330px) and (max-device-width: 480px){
+        width: 60vw;
+        margin: 0;
+    }
 
 `
 export const TituloCarrinho=styled.h1`
@@ -185,6 +273,9 @@ export const TituloCarrinho=styled.h1`
     text-align: center;
     font-family: 'Oswald', sans-serif;
     font-size:25px;
+    @media screen and (min-device-width: 330px) and (max-device-width: 480px){
+        font-size: 20px;
+    }
 `
 
 export const DivItensAdicionados=styled.div`
@@ -198,6 +289,8 @@ export const DivItensAdicionados=styled.div`
 
 export const TituloProdutos=styled.p`
     margin: 10px 15px;
+    @media screen and (min-device-width: 330px) and (max-device-width: 480px){
+    }
 `
 
 export const ValorFinalCarrinho=styled.p`
@@ -207,6 +300,10 @@ export const ValorFinalCarrinho=styled.p`
     font-weight: bold;
     background-color: blueviolet;
     color:white;
+    @media screen and (min-device-width: 330px) and (max-device-width: 480px){
+        font-size: 15px;
+    }
+    
 `
 
 export const ButtonCheckout=styled.button`
@@ -221,7 +318,11 @@ export const ButtonCheckout=styled.button`
     :hover{
         background-color: #6e06cf;
         color: white;
-    }`
+    }
+    @media screen and (min-device-width: 330px) and (max-device-width: 480px){
+        width: 35vw;
+    }
+    `
 
 export const ButtonDeletar=styled.button`
     width: 1vw;
@@ -251,4 +352,9 @@ export const Imagem=styled.img`
     width: 15vw;
     height: 35vh;
     border-radius: 5px;
+    @media screen and (min-device-width: 330px) and (max-device-width: 480px){
+        width: 40vw;
+        height: 25vh;
+    }
+
 `

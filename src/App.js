@@ -3,12 +3,12 @@ import './App.css';
 import { Carrinho } from './Components/Carrinhos';
 import { Filtros } from './Components/Filtros';
 import { ListaDeProdutos } from './Components/ListaDeProdutos';
-import { DivApp, DivProdutosExibidos } from './Styled.js';
+import { DivApp, DivListaCarrinho, DivProdutosExibidos } from './Styled.js';
 import { Produtos } from './mockDeDados'
 import { Header } from './Components/Header';
 
 function App() {
-  const [carrinho, setCarrinho] = useState([])
+  const [carrinho, setCarrinho] = useState(JSON.parse(localStorage.getItem("carrinho"))||[])
   const [produtoAtual] = useState(Produtos)
   const [consulta, setConsulta] = useState("")
   const [minPreco, setMinPreco] = useState(-Infinity)
@@ -32,36 +32,37 @@ function App() {
         setOrdenar={setOrdenar}
         setOrdenarSortido={setOrdenarSortido}
       />
-
-      <DivProdutosExibidos>
-        {
-          produtoAtual
-            .filter(prod => prod.nomeDoProduto.includes(consulta))
-            .filter(prod => Number(prod.valor) >= Number(minPreco) || minPreco === "")
-            .filter(prod => Number(prod.valor) <= Number(maxPreco) || maxPreco === "")
-            .sort((atualProduto, proximoProduto) => {
-              switch (ordernarSortido) {
-                case "valor":
-                  return atualProduto.valor - proximoProduto.valor
-                case "nomeDoProduto":
-                  return atualProduto.nomeDoProduto.localeCompare(proximoProduto.nomeDoProduto)
-                default:
-              }
-            })
-            .sort(() => {
-              if (ordenar === "cresc") {
-                return 0
-              } else {
-                return -1
-              }
-            })
-            .map(prod => <ListaDeProdutos key={prod.id} prod={prod} setCarrinho={setCarrinho} carrinho={carrinho}></ListaDeProdutos>)
-        }
-      </DivProdutosExibidos>
-      <Carrinho carrinho={carrinho} setCarrinho={setCarrinho} />
-
-  
-    </DivApp>
+        <DivListaCarrinho>
+          <DivProdutosExibidos>
+            {
+              produtoAtual
+                .filter(prod => prod.nomeDoProduto.includes(consulta))
+                .filter(prod => Number(prod.valor) >= Number(minPreco) || minPreco === "")
+                .filter(prod => Number(prod.valor) <= Number(maxPreco) || maxPreco === "")
+                .sort((atualProduto, proximoProduto) => {
+                  switch (ordernarSortido) {
+                    case "valor":
+                      return atualProduto.valor - proximoProduto.valor
+                    case "nomeDoProduto":
+                      return atualProduto.nomeDoProduto.localeCompare(proximoProduto.nomeDoProduto)
+                    default:
+                  }
+                })
+                .sort(() => {
+                  if (ordenar === "cresc") {
+                    return 0
+                  } else {
+                    return -1
+                  }
+                })
+                .map(prod => <ListaDeProdutos key={prod.id} prod={prod} setCarrinho={setCarrinho} carrinho={carrinho}></ListaDeProdutos>)
+            }
+          </DivProdutosExibidos>
+          <Carrinho carrinho={carrinho} setCarrinho={setCarrinho} />
+        </DivListaCarrinho>
+    
+      </DivApp>
+    
     </>
   );
 }

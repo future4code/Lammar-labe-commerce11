@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ButtonDeletar, DivCarrinho, DivPrecoRemover, ValorFinalCarrinho } from "../Styled.js";
 import { TituloCarrinho } from "../Styled.js";
 import { TituloProdutos } from "../Styled.js";
@@ -14,11 +14,12 @@ export function Carrinho(props){
             })
             novoCarrinho.splice(deletar,1)
             props.setCarrinho(novoCarrinho)
-            localStorage.setItem("carrinho", novoCarrinho)
+            localStorage.setItem("carrinho", JSON.stringify(novoCarrinho))
         }
         return(
             <>
                 <DivItensAdicionados key={index}>
+                    <p>{item.Quantidade}</p>
                     <TituloProdutos>{item.nomeDoProduto}</TituloProdutos>
                     <DivPrecoRemover>
                         <TituloProdutos>{Number(item.valor).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</TituloProdutos>
@@ -28,7 +29,7 @@ export function Carrinho(props){
             </>
         )
     })
-    let valorItens = props.carrinho.reduce((total, item)=> Number(total) + Number(item.valor), 0)
+    let valorItens = props.carrinho.reduce((total, item)=> Number(total) + (Number(item.valor)* (item.Quantidade)), 0)
 
     return(
         <DivCarrinho>
@@ -36,6 +37,8 @@ export function Carrinho(props){
             {componentsCarrinho}
             <ValorFinalCarrinho>TOTAL: {valorItens.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</ValorFinalCarrinho>
             <ButtonCheckout>FINALIZAR COMPRA</ButtonCheckout> 
+
+
         </DivCarrinho>
     )
 

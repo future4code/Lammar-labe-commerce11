@@ -1,5 +1,5 @@
 import React from "react";
-import { InputFiltro, Option, Ordenacao, OrdenacaoSortido } from "../Styled.js";
+import { InputFiltro, DivFiltrosOrdenacao, Option, Ordenacao, OrdenacaoSortido, P, LabelFiltroOrdenacao } from "../Styled.js";
 import { LabelFiltro } from "../Styled.js";
 import { TituloFiltro } from "../Styled.js";
 import { DivFilto } from "../Styled.js";
@@ -9,30 +9,38 @@ export function Filtros(props) {
         <DivFilto>
             <TituloFiltro>Filtros</TituloFiltro>
 
-            <LabelFiltro>Busca por nome</LabelFiltro>
-            <InputFiltro placeholder="Digite o nome"
-                value={props.consulta}
-                onChange={(ev) => { props.setConsulta(ev.target.value) }}>
-            </InputFiltro>
+            <DivFiltrosOrdenacao>
+                <LabelFiltro>Busca por nome</LabelFiltro>
+                <InputFiltro placeholder="Digite o nome"
+                    value={props.consulta}
+                    onChange={(ev) => { props.setConsulta(ev.target.value) }}>
+                </InputFiltro>
+            </DivFiltrosOrdenacao>
 
-            <LabelFiltro>Valor mínimo</LabelFiltro>
-            <InputFiltro placeholder="Digite um valor"
-                type="number"
-                value={props.minPreco}
-                onChange={(ev) => { props.setMinPreco(ev.target.value) }}
-            ></InputFiltro>
+            <DivFiltrosOrdenacao>
+                <LabelFiltro>Valor mínimo</LabelFiltro>
+                <InputFiltro placeholder="Digite um valor"
+                    type="number"
+                    value={props.minPreco}
+                    onChange={(ev) => { props.setMinPreco(ev.target.value) }}>
+                </InputFiltro>
+            </DivFiltrosOrdenacao>
 
-            <LabelFiltro>Valor máximo</LabelFiltro>
-            <InputFiltro placeholder="Digite um valor"
-                type="number"
-                value={props.maxPreco}
-                onChange={(ev) => { props.setMaxPreco(ev.target.value) }}
-            ></InputFiltro>
+            <DivFiltrosOrdenacao>
+                <LabelFiltro>Valor máximo</LabelFiltro>
+                <InputFiltro placeholder="Digite um valor"
+                    type="number"
+                    value={props.maxPreco}
+                    onChange={(ev) => { props.setMaxPreco(ev.target.value) }}>
+                </InputFiltro>
+            </DivFiltrosOrdenacao>
+
+                
 
 
 
-            <LabelFiltro>
-                <p>Ordenar por:</p>
+            <LabelFiltroOrdenacao>
+                <P>Ordenar por:</P>
                 <Ordenacao
                     value={props.ordenar}
                     onChange={(ev) => { props.setOrdenar(ev.target.value) }}
@@ -48,7 +56,7 @@ export function Filtros(props) {
                 <Option value={"nomeDoProduto"}>Nome</Option>
                 <Option value={"valor"}>Preço</Option>
             </OrdenacaoSortido>
-            </LabelFiltro>
+            </LabelFiltroOrdenacao>
 
         </DivFilto>
     )
