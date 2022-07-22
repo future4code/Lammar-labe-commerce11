@@ -3,9 +3,11 @@ import { ButtonLogin, DivHeader, DivLogin, DivLogo, ImagemLogin, ImagemLogo, Tit
 import LoginIcone from '../img/IconePink.png'
 import Logo from '../img/logo.png'
 
-export function Header(){
+export function Header(props){
     return(
-        <DivHeader>
+        <DivHeader
+        onClick={()=>props.setCheckout(false)}
+        >
             <DivLogo>
                 <ImagemLogo src={Logo}/>
                 <TituloLogo>Universo das camisetas</TituloLogo>
