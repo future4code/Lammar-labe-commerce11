@@ -16,7 +16,7 @@ function App() {
   const [maxPreco, setMaxPreco] = useState(Infinity)
   const [ordenar, setOrdenar] = useState("cresc")
   const [ordernarSortido, setOrdenarSortido] = useState("nomeDoProduto")
-  const [checkout, setCheckout]=useState(true)
+  const [checkout, setCheckout]=useState(false)
 
   return (
     <>

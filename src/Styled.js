@@ -448,7 +448,7 @@ export const DivNomeBandeira=styled.div`
 export const DivCartaoApresentacao=styled.div`
     display: flex;
     flex-direction: row;
-    margin-top: 5px;
+    margin-top: 5px;np
 
     span{
         margin: 10px 20px 0 20px;
