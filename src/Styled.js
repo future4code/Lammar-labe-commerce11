@@ -448,7 +448,7 @@ export const DivNomeBandeira=styled.div`
 export const DivCartaoApresentacao=styled.div`
     display: flex;
     flex-direction: row;
-    margin-top: 5px;np
+    margin-top: 5px;
 
     span{
         margin: 10px 20px 0 20px;
@@ -595,6 +595,7 @@ export const InputCheckout=styled.input`
         color: white;
         text-align: start;
         font-size: 15px;
+
     }
 `
 
